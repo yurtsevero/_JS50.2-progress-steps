@@ -1,2 +1,2 @@
-# _JS50.1-expanding-cards
-# Single Page Images Gallery 
+# _JS50.2-progress-steps
+# Progress Steps visually showed 
