@@ -1,15 +1,21 @@
-//select all panels with Vanilla JS , also possible with querySelectorAll --> dont need Array.from then
-const panels = Array.from(document.getElementsByClassName("panel"));
+const buttons = document.querySelectorAll(".progress__btn");
+const progressBar = document.querySelector("#progress-bar");
+const circles = document.querySelectorAll("progress__cirlce");
 
-panels.forEach((panel) => {
-  panel.addEventListener("click", () => {
-    removeActivePanels();
-    panel.classList.add("panel--active");
+let currentCircle = 1;
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.id == "next") {
+      currentCircle++;
+      if (currentCircle > circles.length) {
+        currentCircle = circles.length;
+      }
+
+      progressBar.style.width = "25% ";
+      console.log(progressBar.style.backgroundSize);
+    }
   });
+
+  // if(button.id)
 });
-
-removeActivePanels = () => {
-  panels.forEach((panel) => {
-    panel.classList.remove("panel--active");
-  });
-};

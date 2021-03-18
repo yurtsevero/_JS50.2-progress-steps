@@ -1,38 +1,66 @@
 .progress {
-    display: flex;    
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    position: relative;
-    &__bar{
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        background-color: #f5f5f5;
-        border-radius: 0.5rem;
-        width: 100%;
-        height: .5rem;
-        z-index: -1;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+  &__bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: $line-border-fill;
+    border-radius: 0.5rem;
+    width: 0%;
+    height: 0.5rem;
+    z-index: -1;
+    transition: 0.4s ease;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 0.5rem;
+    z-index: -1;
+  }
+  &__circle {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: rgba(#000000, 0.8);
+    border: 0.5rem solid #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    &--active {
+      border-color: $line-border-fill;
     }
-    &__circle{
-        width: 50px;
-        height: 50px;
-        background-color: #fff;
-        border:0.5rem solid #f5f5f5;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;      
-       
+  }
+  &__btn {
+    width: 100px;
+    height: 48px;
+    margin: 0 0.5rem;
+    color: #fff;
+    border: none;
+    background-color: $line-border-fill;
+    border-radius: 0.5rem;
+    outline: none;
+    cursor: pointer;
+
+    &:active {
+      transform: scale(0.98);
     }
-    &__btn{
-        width: 100px;        
-        height: 48px;
-        margin: 0 0.5rem;
-        color: #fff;
-        border-radius: 0.5rem;
-        outline: none;
-        
+
+    &:disabled {
+      background-color: $line-border-empty;
+      cursor: not-allowed;
     }
+  }
 }
