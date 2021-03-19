@@ -14,7 +14,7 @@
     width: 0%;
     height: 0.5rem;
     z-index: -1;
-    transition: 0.4s ease;
+    transition: 0.7s ease;
   }
   &::before {
     content: "";
@@ -38,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.7s ease;
 
     &--active {
       border-color: $line-border-fill;
